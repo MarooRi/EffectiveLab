@@ -1,3 +1,7 @@
-<resources>
-    <string name="app_name">EffectiveLabs</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="hero">Choose your hero</string>
+    <string name="marvel_logo">Marvel Logo</string>
+    <string name="thor">Thor</string>
+    <string name="doctor">Doctor Strange</string>
+    <string name="app_name">Marvel Heroes</string>
 </resources>
