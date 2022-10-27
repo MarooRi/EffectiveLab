@@ -9,6 +9,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,19 +24,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
+import coil.compose.AsyncImagePainter
+import ru.effective.effectivelabs.R
 import ru.effective.effectivelabs.data.Hero
 
 @Composable
 fun ImageHero(hero: Hero) {
     Box(
-        contentAlignment = Alignment.BottomStart
+        contentAlignment = Alignment.BottomStart,
+        modifier = Modifier.background(Color.White)
     ) {
-        Image(
-            painter = painterResource(id = hero.image),
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.size(height = 500.dp, width = 300.dp)
-        )
+        AsyncImage(model = hero.image, contentDescription = null,
+            placeholder = painterResource(id = R.drawable.loading_img),
+            error = painterResource(id = R.drawable.ic_connection_error),
+            modifier = Modifier.size(height = 500.dp, width = 300.dp),
+            contentScale = ContentScale.Crop)
         Text(
             text = stringResource(id = hero.title),
             color = Color.White,

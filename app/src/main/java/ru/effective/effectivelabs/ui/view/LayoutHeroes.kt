@@ -46,6 +46,8 @@ fun LayoutHeroes() {
         ) { page ->
             Card(
                 Modifier
+                    .width(300.dp)
+                    .height(500.dp)
                     .graphicsLayer {
                         // Calculate the absolute offset for the current page from the
                         // scroll position. We use the absolute value which allows us to mirror
@@ -68,7 +70,7 @@ fun LayoutHeroes() {
                         )
                     }.shadow(elevation = 40.dp, spotColor = heroes[page].color, shape = MaterialTheme.shapes.large)
             ) {
-                Box(Modifier.shadow(elevation = 30.dp)) {
+                Box {
                     ImageHero(hero = heroes[page])
                 }
             }
