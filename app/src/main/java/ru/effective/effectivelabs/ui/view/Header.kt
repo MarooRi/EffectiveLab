@@ -7,6 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -20,14 +21,15 @@ import ru.effective.effectivelabs.R
 @Preview(showBackground = true)
 @Composable
 fun Header(){
-    Column(modifier = Modifier.background(Color.DarkGray).fillMaxWidth(),horizontalAlignment = Alignment.CenterHorizontally,
+    Column(modifier = Modifier.fillMaxWidth(),horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Image(
             painter = painterResource(R.drawable.marvel),
             contentDescription = "Marvel Logo",
             modifier = Modifier
                 .width(120.dp)
-                .padding(top = 32.dp, bottom = 32.dp),
+                .padding(top = 32.dp, bottom = 32.dp)
+                .shadow(elevation = 10.dp, spotColor = Color.White),
             contentScale = ContentScale.Fit
         )
         Text(

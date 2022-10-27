@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "ru.effective.effectivelabs"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -60,4 +60,6 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
     implementation "dev.chrisbanes.snapper:snapper:0.3.0"
+    implementation "com.google.accompanist:accompanist-pager:0.27.0"
+    implementation "androidx.compose.ui:ui-util:$compose_version"
 }
