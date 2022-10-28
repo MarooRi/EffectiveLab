@@ -4,4 +4,6 @@
     <string name="thor">Thor</string>
     <string name="doctor">Doctor Strange</string>
     <string name="app_name">Marvel Heroes</string>
+    <string name="thor_des">I am Thor</string>
+    <string name="doctor_des">I am Doctor Strange</string>
 </resources>

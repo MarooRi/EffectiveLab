@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import ru.effective.effectivelabs.ui.theme.EffectiveLabsTheme
+import ru.effective.effectivelabs.ui.view.HeroApp
 import ru.effective.effectivelabs.ui.view.LayoutHeroes
 
 class MainActivity : ComponentActivity() {
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    LayoutHeroes()
+                    HeroApp()
                 }
             }
         }
