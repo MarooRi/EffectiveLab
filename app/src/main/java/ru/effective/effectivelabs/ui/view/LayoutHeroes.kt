@@ -1,6 +1,7 @@
 package ru.effective.effectivelabs.ui.view
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -22,13 +23,15 @@ import com.google.accompanist.pager.calculateCurrentOffsetForPage
 import ru.effective.effectivelabs.data.Hero
 import kotlin.math.absoluteValue
 import androidx.compose.ui.util.lerp
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.pager.rememberPagerState
 
 
 @OptIn(ExperimentalPagerApi::class)
-@Preview(showBackground = true)
 @Composable
-fun LayoutHeroes() {
+fun LayoutHeroes(navController: NavController) {
     val pagerState = rememberPagerState()
     val heroes by remember { mutableStateOf(Hero.create()) }
 
@@ -68,9 +71,14 @@ fun LayoutHeroes() {
                             stop = 1f,
                             fraction = 1f - pageOffset.coerceIn(0f, 1f)
                         )
-                    }.shadow(elevation = 40.dp, spotColor = heroes[page].color, shape = MaterialTheme.shapes.large)
+                    }
+                    .shadow(
+                        elevation = 40.dp,
+                        spotColor = heroes[page].color,
+                        shape = MaterialTheme.shapes.large
+                    )
             ) {
-                Box {
+                Box(Modifier.clickable { navController.navigate("hero/${page}") }) {
                     ImageHero(hero = heroes[page])
                 }
             }

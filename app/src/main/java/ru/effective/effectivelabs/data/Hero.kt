@@ -14,14 +14,33 @@ import ru.effective.effectivelabs.ui.theme.Purple500
 data class Hero(
     val image: String,
     @StringRes val title: Int,
-    @DrawableRes val color: Color
+    @DrawableRes val color: Color,
+    @StringRes val description: Int,
 ) {
     companion object {
         fun create() = listOf(
-            Hero( "https://vignette1.wikia.nocookie.net/marvelmovies/images/5/52/Thor_03.jpg/revision/latest/scale-to-width-down/2000?cb=20121012073645", R.string.thor, Color.Blue),
-            Hero("https://www.iamag.co/wp-content/uploads/2016/11/doctor-strange-ca2-770x1024.jpg", R.string.doctor, Purple500),
-            Hero("https://vignette1.wikia.nocookie.net/marvelmovies/images/5/52/Thor_03.jpg/revision/latest/scale-to-width-down/2000?cb=20121012073645", R.string.thor, Color.Blue),
-            Hero("https://www.iamag.co/wp-content/uploads/2016/11/doctor-strange-ca2-770x1024.jpg", R.string.doctor, Purple500)
+            Hero(
+                "https://vignette1.wikia.nocookie.net/marvelmovies/images/5/52/Thor_03.jpg/revision/latest/scale-to-width-down/2000?cb=20121012073645",
+                R.string.thor,
+                Color.Blue, R.string.thor_des
+            ),
+            Hero(
+                "https://www.iamag.co/wp-content/uploads/2016/11/doctor-strange-ca2-770x1024.jpg",
+                R.string.doctor,
+                Purple500,
+                R.string.doctor_des
+            ),
+            Hero(
+                "https://vignette1.wikia.nocookie.net/marvelmovies/images/5/52/Thor_03.jpg/revision/latest/scale-to-width-down/2000?cb=20121012073645",
+                R.string.thor,
+                Color.Blue, R.string.thor_des
+            ),
+            Hero(
+                "https://www.iamag.co/wp-content/uploads/2016/11/doctor-strange-ca2-770x1024.jpg",
+                R.string.doctor,
+                Purple500,
+                R.string.doctor_des
+            )
         )
     }
 }

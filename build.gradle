@@ -8,7 +8,16 @@ plugins {
     id 'com.android.application' version '7.2.2' apply false
     id 'com.android.library' version '7.2.2' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
+    id("io.gitlab.arturbosch.detekt").version("1.22.0-RC2")
 }
+
+detekt {
+    toolVersion = "1.22.0-RC2"
+    config = files("$rootDir/config/detekt/detekt.yml")
+    buildUponDefaultConfig = true
+    input = files("src/main/java")
+}
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir
