@@ -3,21 +3,27 @@ buildscript {
         compose_version = '1.3.0'
         kotlin_version = '1.7.10'
     }
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0-RC3"
+    }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id 'com.android.application' version '7.2.2' apply false
-    id 'com.android.library' version '7.2.2' apply false
+    id 'com.android.application' version '7.3.1' apply false
+    id 'com.android.library' version '7.3.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
-    id("io.gitlab.arturbosch.detekt").version("1.22.0-RC2")
+    id("io.gitlab.arturbosch.detekt").version("1.22.0-RC3")
 }
 
 detekt {
-    toolVersion = "1.22.0-RC2"
-    config = files("$rootDir/config/detekt/detekt.yml")
+    toolVersion = "1.22.0-RC3"
+    config = files("$projectDir/config/detekt/detekt.yml")
     buildUponDefaultConfig = true
-    input = files("src/main/java")
 }
-
 
 task clean(type: Delete) {
     delete rootProject.buildDir
